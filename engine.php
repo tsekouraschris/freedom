@@ -4,7 +4,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "test";
-$message = $_POST['message']
+$message = $_POST['message'];
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 //echo "Connected successfully";
 
 $sql = "INSERT INTO messages (content)
-VALUES ($message)";
+VALUES ('$message')";
 
 if ($conn->query($sql) === TRUE )
 {
